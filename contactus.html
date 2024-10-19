@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--linking google fonts for icon-->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+    <title>Parlour</title>
+
+    <!--linking swiper js css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />"
+    
+    <style>
+
+        * {
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia,serif;
+        }
+        
+        header{
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            padding: 20px  100px;
+           /* background: grey;/* img lagane baad ye hata dena  fir pure me image lag jaayegi*/
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+    
+
+
+        .logo{
+            font-size: 25px;
+            color: rgb(221, 212, 212);
+            user-select: none;
+        }
+
+        .logo img{
+            height: 80px;
+            margin: 20px;
+            border-radius: 30px;
+        }
+
+        .navbar .btnLogin-popup{
+            width: 130px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid #fff;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            color:black;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: -5s;
+        }
+
+        .navbar .btnLogin-popup:hover{
+            background: #fff;
+            color: #162938;
+        }
+        .navbar a {
+            position: relative;
+            font-size: 1.1em;
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+        }
+/* for underline under the home about contact*/
+        .navbar a::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom:-6px;
+            width:100%;
+            height:3px;
+            background: white;
+            border-radius: 1px;
+            transform-origin: left;
+            transform: scaleX(0); /* hide kar deta kisi chiz ko*/
+            transition: transform .5s;/* for second*/
+        }
+
+        .navbar a:hover::after{
+            transform:scaleX(1);
+        }
+        .navbar {
+            border-radius: 8px;
+        }
+        .navbar ul {
+            overflow: auto;
+        }
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 10px 10px;
+            font-family: Georgia, serif;
+        }
+        .navbar li a {
+            padding:4px 4px;
+            text-decoration: none;
+            color:white;
+            font-family: Georgia, serif;
+         }
+
+        body {
+           /* background-color: pink;*/
+            font-family: 'Lucida Sans',sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(221, 212, 212);
+            background-size: cover;
+            background-image: url(d15.jpg);
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            bottom:100px;
+            margin-top: 40px;
+        }
+        h2 {
+            font-family: Georgia, serif;
+            box-sizing: border-box;
+            color: rgb(221, 212, 212);
+        }
+        h4{
+            font-size: 30px;
+            font-family: Georgia, serif;
+        }
+        
+        p{
+             
+            font-family: Georgia, serif;
+            font-size: 25px;
+            color: white;
+        }
+
+        button{
+            
+            font-family: Georgia, serif;
+        }
+
+        .contact-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .contact-left{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+        }
+
+        .contact-left-title h3{
+            font-weight: 600;
+            color: white;
+            font-size: 40px;
+            font-family: Georgia, serif;
+            margin-bottom: 5px;
+        }
+        .contact-left-title hr{
+            border: none;
+            width: 120px;
+            height: 5px;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+      
+        .contact-input{
+            width:400px;
+            height:50px;
+            border: none;
+            outline: none;
+            padding-left: 25px;
+            font-weight: 500;
+            color: black;
+            border-radius: 50px;
+        }
+
+        .contact-left textarea{
+            height: 140px;
+            padding-top: 15px;
+            border-radius: 20px;
+        }
+
+        .contact-input:focus{
+            border: 2px solid gray;
+        }
+
+        .contact-input::placeholder{
+            color: #162938;
+            font-size: 20px;
+        }
+
+        @media only screen and (min-width:100px) and (max-width:1100px){
+            .contact-input::placeholder{ 
+                width:150vw;
+            }
+        }
+
+        .contact-left button{
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            font-size: 20px;
+            color: black;
+            gap: 10px;
+            border-radius: 50px;
+            background: linear-gradient( black gray);
+            cursor: pointer;
+        }
+
+        @media only screen and (min-width:100px) and (max-width:400px){
+            .contact-left button{ 
+                width:150vw;
+                display: block;
+            }
+        }
+
+        @media only screen and (min-width:100px) and (max-width:400px){
+            .contact-input{ 
+                width:150vw;
+                display: block;
+            }
+        }
+        div .contact-right  img{
+            border:66px;
+            border-radius: 25px;
+            display: flex;
+            margin-bottom: 100px;
+            border-color: 2px solid black;
+
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="d0.jpg" alt="error">
+            </div>
+        <nav class = " navbar">
+            <ul>
+                <li><a href ="home.html" >Home</a></li>
+                <li><a href ="about.html" >About us</a></li>
+                <li><a href ="contactus.html"> Contact us</a></li>
+                <li><a href ="donation.html" >Donate</a></li>
+                <li><a href="ask question.html">Ask doubts</a></li>
+                <li><a href ="volunteer.html" >Volunteer </a></li>
+            </ul>
+        </nav>
+    </header>
+
+<br><br><br><br><br><br><br><br>
+
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h3>Get in touch</h3>
+                <hr>
+            </div>
+        <input type="hidden" name="access_key" value="53c93d63-7c00-4fae-a308-d9aa0c81af3c">
+        <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+        <input type="email" name="email" placeholder="Your E-mail" class="contact-input" required>
+        <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+        <button type="submit">Submit</button>
+
+        </form>
+           
+      
+       <div class="contact-right"><img src="d8.jpg" width="400px" height="200px" alt="error"></div>
+
+    </div>
+
+<br><br>
+
+    <h4>Other Ways To Reach Us:</h4>
+<br>
+    <p>E-mail:siddiquekashish654@gmail.com<br>
+        Phone: 8287235886</p>
+<br>
+    <h4> Donation Details:</h4>
+<br>
+    <p>Monday-Friday:9AM-5PM</p><br><br><br><br>
+
+    </body>
+    </html>

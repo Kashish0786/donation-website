@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title> Login </title>
+ <style>
+
+        * {
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia,serif;
+        }
+
+        body {
+           /* background-color: pink;*/
+            font-family: 'Lucida Sans',sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(221, 212, 212);
+            background-image: url(d14.jpg);
+
+        }
+        
+        header{
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            padding: 20px  100px;
+           /* background: grey;/* img lagane baad ye hata dena  fir pure me image lag jaayegi*/
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo{
+            font-size: 25px;
+            color: rgb(221, 212, 212);;
+            user-select: none;
+        }
+
+        .logo img{
+            height: 80px;
+            margin: 20px;
+            border-radius: 30px;
+        }
+
+        .navbar .btnLogin-popup{
+            width: 130px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid #fff;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            color:black;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: -5s;
+        }
+
+        .navbar .btnLogin-popup:hover{
+            background: #fff;
+            color: #162938;
+        }
+        .navbar a {
+            position: relative;
+            font-size: 1.1em;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+        }
+/* for underline under the home about contact*/
+        .navbar a::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom:-6px;
+            width:100%;
+            height:3px;
+            background: white;
+            border-radius: 1px;
+            transform-origin: left;
+            transform: scaleX(0); /* hide kar deta kisi chiz ko*/
+            transition: transform .5s;/* for second*/
+        }
+
+        .navbar a:hover::after{
+            transform:scaleX(1);
+        }
+        .navbar{
+            border-radius: 8px;
+        }
+        .navbar ul {
+            overflow: auto;
+        }
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 10px 10px;
+            font-family: Georgia, serif;
+               
+        }
+        .navbar li a {
+            padding:4px 4px;
+            text-decoration: none;
+            color:white;
+            font-family: Georgia, serif;
+        }
+
+        body {
+             font-family: 'Lucida Sans',sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url(d15.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            color: black;
+            margin-top: 40px;
+        }
+        
+    .wrapper { 
+        position: relative;
+        width:400px;
+        height: 400px;
+        background: transparent;
+        border: 2px solid rgb(29, 16, 16);/* for changing the border color*/
+        border-radius: 25px;
+        backdrop-filter: blur(20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+       overflow: hidden;
+      /* transform: scale(0);*/
+       transition: transform .5s ease , height .2s ease;
+    }
+
+    .wrapper.active-popup{
+        transform: scale(1);
+    }
+    .wrapper.active{
+        height: 500px;
+    }
+    .wrapper .form-box{
+        width: 100%;
+        padding:40px;
+    }
+
+    .wrapper .form-box.login {
+      transition: transform .18s ease;
+      transform: translateX(0);
+    }
+
+    .wrapper.active .form-box.login {
+        transition: none;
+        transform: translateX(-400px);
+    }
+    
+    .wrapper .form-box.register {
+        position: absolute;
+        transition: none;
+        transform: translateX(400px);
+    }
+
+    .wrapper.active .form-box.register {
+      transition: transform .18s ease;
+      transform: translateX(0);
+    }
+
+    .wrapper .form-container {
+        display: none;
+        transition: none;
+        transform: translateX(500px);
+    }
+    /*.wrapper.active .form-container {
+      transition: transform .18s ease;
+      transform: translateX(0);
+    }*/
+   .wrapper .icon-close{
+        position: absolute;
+        top: 0;
+        right: 0 ;
+        width: 45px;
+        height: 45px;
+        background: #162938;
+        font-size: 2em;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+   }
+    .form-box h2{
+        font-size: 2em;
+        color: black;
+        text-align: center;
+    }
+
+    .input-box{
+        position: relative;
+        width: 100%;
+        height:50px;
+        border-bottom: 2px solid #162938;
+        margin: 30px 0;
+    }
+    
+    .input-box label{
+        position: absolute;
+        top:50%;
+        left:5px;
+        transform:translateY(-50%);
+        font-size:1em;
+        color: #162938;
+        font-weight: 500;
+        pointer-events: none;
+        transition: .5s;
+    }
+    .input-box input:focus~label,
+    .input-box input:valid~label{
+        top:-3px;
+    }
+
+    .input-box input{
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        font-weight: 600;
+        color: #162938;
+    }
+
+    .input-box .icon {
+        position: absolute;
+        right: 8px;
+        font-size: 1.2em;
+        color: #162938;
+        line-height: 57px;
+    }
+
+    .remember-forget{
+        font-size: .9em;
+        color: #162938;
+        text-align: center;
+        font-weight: 500;
+        margin: -15px 0 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .remember-forget label input {
+        accent-color: #162938;
+        margin-right: 3px;
+    }
+
+    .remember-forget a {
+        color:#162938;
+        text-decoration: none;
+    }
+
+    .remember-forget a:hover {
+        color: #162938;
+        text-decoration: underline;
+    }
+
+    .btn {
+        width:100%;
+        height:45px;
+        background: #162938;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        cursor:pointer;
+        font-size: 1em;
+        color: aliceblue;
+        font-weight: 500;
+    }
+
+    .login-register{
+        font-size: .9em;
+        color: #162938;
+        text-align: center;
+        font-weight: 500;
+        margin: 25px 0 10px;
+    }
+
+    .login-register p a {
+        color: #162938;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .login-register p a:hover {
+        text-decoration: underline;
+    }
+    
+    p{
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    
+    }
+
+    h2{
+            font-family: Georgia, serif;
+            color: black;
+            font-size: 30px;
+        
+        }
+
+ </style>   
+</head>
+<body>
+
+<br><br><br><br><br>
+
+<h1>Volunteer</h1>
+
+<br>
+
+<p>
+A volunteer is a person who offers their time, efforts, and <br>services willingly,without being paid or expecting compensation.
+</p>
+
+<br>
+<h2>Volunteer Oppotrunities</h2>
+<br>
+<P>1:- We are providing you the community service to work with <br>the NGOs.<br><br>
+   2:- Conservation of environment by participating in tree<br> plantation,clean-up events ,etc. <br><br>
+   3:- We are providing you the animal welfare service to rescue<br> the wildlife.<br><br>
+   4:- we are providing you a management skills to organize<br> many events .<br><br>
+   5:- We are providing you the NGOs to work as a tutor and<br> educate children.<br><br>
+   6:- Hence , join us to make a difference in the society with <br>us as a volunteer.<br><br>
+</P>
+
+    <header>
+        <div class="logo">
+            <img src="d0.jpg" alt="error">
+            </div>
+        <nav class = " navbar">
+            <ul>
+                <li><a href ="home.html" >Home</a></li>
+                <li><a href ="about.html" >About Us</a></li>
+                <li><a href ="contactus.html"> Contact us</a></li>
+                <button class="btnLogin-popup">Volunteer</button>
+                <li><a href ="donation.html" >Donate</a></li>
+                <li><a href="ask question.html">Ask doubts</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div class = "wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class=" form-box login">
+            <h2> Login  </h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me  </label>
+                    <a href="forgot.html">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class=" form-box register">
+            <h2> Registration </h2>
+            <form action="#">
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions </label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account ?<a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h2> Forgot Password </h2>
+            <form action="#"></form>
+            <p class=" para ">Please check your mail</p>
+
+                <div class="input.box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="text" id= "email" name="email" required>
+                    
+                    <label>Email</label>
+                </div>
+
+                <button type="submit" class="btn">Send E-mail</button>
+                    <p>Already have an account ?<a href="#" class="login-link">Login</a></p>
+
+                </div>
+            </form>
+        </div>
+    </div>  
+
+
+    <script src = "script.js"> </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+</body> 
+
+</html>

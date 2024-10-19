@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--linking google fonts for icon-->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+    <title>Parlour</title>
+
+    <!--linking swiper js css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />"
+    
+    <style>
+
+        * {
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia,serif;
+        }
+        
+        header{
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            padding: 20px  100px;
+          /* background: grey;/* img lagane baad ye hata dena  fir pure me image lag jaayegi*/
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo{
+            font-size: 25px;
+            color: rgb(221, 212, 212);
+            user-select: none;
+        }
+
+        .logo img{
+            height: 80px;
+            margin: 20px;
+            border-radius: 30px;
+        }
+        .navbar .btnLogin-popup{
+            width: 130px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid #fff;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            color:black;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: -5s;
+        }
+
+        .navbar .btnLogin-popup:hover{
+            background: #fff;
+            color: #162938;
+        }
+        .navbar a {
+            position: relative;
+            font-size: 1.1em;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+        }
+/* for underline under the home about contact*/
+        .navbar a::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom:-6px;
+            width:100%;
+            height:3px;
+            background: white;
+            border-radius: 1px;
+            transform-origin: left;
+            transform: scaleX(0); /* hide kar deta kisi chiz ko*/
+            transition: transform .5s;/* for second*/
+        }
+
+        .navbar a:hover::after{
+            transform:scaleX(1);
+        }
+        .navbar {
+            border-radius: 8px;
+        }
+        .navbar ul {
+            overflow: auto;
+        }
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 10px 10px;
+            font-family: Georgia, serif;
+        }
+        .navbar li a {
+            padding:4px 4px;
+            text-decoration: none;
+            color:white;
+            font-family: Georgia, serif;
+         }
+
+        body {
+           /* background-color: pink;*/
+            font-family: 'Lucida Sans',sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(221, 212, 212);
+            background-size: cover;
+            background-image: url(d15.jpg);
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            bottom:100px;
+            margin-top: 40px;
+            color: white;
+        }
+        h2 {
+            font-family: Georgia, serif;
+            box-sizing: border-box;
+            color: rgb(221, 212, 212);
+        }
+
+        h3 {
+            font-family: Georgia, serif;
+            color:black;
+            font-size: 30px;
+        }
+        section{
+        
+            font-family: Georgia, serif;
+        }
+        
+        p{
+             
+            font-family: Georgia, serif;
+            font-size: 25px;
+            color:white;
+        }
+
+        button{
+            
+            font-family: Georgia, serif;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="d0.jpg" alt="error">
+            </div>
+        <nav class = " navbar">
+            <ul>
+                <li><a href ="home.html" >Home</a></li>
+                <li><a href ="about.html" >About us</a></li>
+                <li><a href ="contactus.html"> Contact us</a></li>
+                <li><a href ="donation.html" >Donate</a></li>
+                <li><a href="ask question.html">Ask doubts</a></li>
+                <li><a href ="volunteer.html" >Volunteer </a></li>
+            </ul>
+        </nav>
+    </header>
+    <br> <br> <br><br>
+    <h1>About Us</h1>
+<br>
+<div class="img">
+    <img src="d6.jpg" width="400px" height="200px" alt="error"></div>
+    <br> <br> <br><br>
+    <p> We believe that every contribution counts, and together,<br>
+     we can make a significant impact in our communities. <br> Our platform is dedicated to connecting people and <br>the needy person.
+        <br><br> "let's create a difference" <br><br> Together , we can help to create a world where<br> everyone
+        feels comfortable and valued.
+    </p><br>
+
+    <h3>Our Collaboration with NGOs</h3><br>
+    <p> we understand the power of collaboration. That's why we<br> have partnered with several esteemed NGOs
+        dedicated <br>to various, education , children healthcare , poverty <br>and environmental sustainability.<br><br>
+        By working together, we amplify our reach and ensure <br>that donations directly benefit those who <br>need them most.</p>
+        <br>
+    <h3>Door To Door Donation Service.</h3><br>
+    <p>To make giving as easy as possible, we offer a convenient <br>door-to-door service
+        for collecting <br> donated items. <br><br> Whether you have clothing, books, or household
+        goods,<br> our dedicated team will come to your doorstep, <br> ensuring that your donations
+        are collected <br> safely and efficiently.<br> <br> This not only saves your time but also ensures
+        that <br>your contributions are delivered directly to<br> our partner NGOs.</p><br>
+    
+    <h3>Join us in making a difference.</h3><br> 
+    <p>Your generosity can change lives. By donating you're not<br> just giving items;
+        you're offering hope, support, and <br> a brighter future to countless individuals
+        and <br>families.<br><br> Together, let's build a stronger community.</p>
+<br><br><br><br><br><br><br>
+</body>
+
+</html>
+
+
+

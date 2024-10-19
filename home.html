@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--linking google fonts for icon-->
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+    <title>Donation</title>
+
+    <!--linking swiper js css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />"
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia, serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(221, 212, 212);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(d15.jpg);
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .card-wrapper {
+            margin: 0 auto;
+        }
+
+        header {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            padding: 20px 100px;
+           /* background: grey;*/
+            /* img lagane baad ye hata dena  fir pure me image lag jaayegi*/
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo {
+            font-size: 15px;
+            color: rgb(221, 212, 212);
+            user-select: none;
+        }
+
+        .logo img{
+            height: 80px;
+            margin: 20px;
+            border-radius: 30px;
+        }
+        .navbar .btnLogin-popup {
+            width: 130px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid #fff;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            color: black;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: -5s;
+        }
+
+        .navbar .btnLogin-popup:hover {
+            background: #fff;
+            color: #162938;
+        }
+
+        .navbar a {
+            position: relative;
+            font-size: 1.1em;
+            color:white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+        }
+
+        /* for underline under the home about contact*/
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background:white;
+            border-radius: 1px;
+            transform-origin: left;
+            transform: scaleX(0);
+            /* hide kar deta kisi chiz ko*/
+            transition: transform .5s;
+            /* for second*/
+        }
+
+        .navbar a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .navbar {
+          /*  background-color: rgb(221, 212, 212);*/
+            border-radius: 8px;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 10px 10px;
+            font-family: Georgia, serif;
+        }
+
+        .navbar li a {
+            padding: 4px 4px;
+            text-decoration: none;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        body {
+            /* background-color: pink;*/
+            font-family: 'Lucida Sans', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(221, 212, 212);
+            background-size: cover;
+           background-image: url(d15.jpg);
+            background-attachment: fixed;
+        }
+
+        navbar ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+
+            margin-top: 40px;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            box-sizing: border-box;
+            color: rgb(221, 212, 212);
+        }
+
+        h3 {
+
+            font-family: Georgia, serif;
+            font-size: 30px;
+            margin-bottom:350px;
+        }
+
+        p {
+
+            font-family: Georgia, serif;
+            font-size: 50px;
+            color: white;
+        }
+
+        button {
+
+            font-family: Georgia, serif;
+        }
+
+        /*.card-wrapper {
+            /*  max-width: 1100px;
+            margin: 0 60px 30px;
+            padding: 20px 10px;
+            overflow: hidden;
+    
+        }
+
+        .card-wrapper .swiper-pagination-bullet {
+            display: none;
+        }
+
+        .card-list .card-item .card-link {
+            width: 430px;
+            display: block;
+            background: grey;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            user-select: none;           
+
+        }
+
+        .card-list .card-link .card-image {
+            border-radius: 25px;
+            display: flex;
+            
+        }
+
+        .card-list .card-link .badge {
+            color: black;
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin: 15px 0 17px;
+            background: #fff;
+            width: fit-content;
+            border-radius: 40px; 
+
+        }*/
+
+        /* General Styles 
+
+
+.join-btn {
+    background-color: orange;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hero Section 
+.hero {
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons button {
+    padding: 0.8rem 2rem;
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.donate-btn {
+    background-color: orange;
+    color: white;
+}
+
+.watch-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+ Services Section 
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 1rem;
+    background-color: rgb(230, 220, 220);
+    text-align: center;
+    border-radius: 45px;
+    border:3px solid rgb(148, 138, 138);
+    justify-content: right;
+
+
+}
+
+.service img {
+    width: 250px;
+    border-radius: 5px;
+    border:3px solid rgb(146, 136, 136);
+    margin:2px;
+    padding:2px;
+
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: white;
+}
+
+.service p {
+    font-size: 20px;
+    color: white;
+}
+
+/* Get Involved Section */
+/*.get-involved {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #fff;
+    margin-top: auto;
+    display: flex;
+    margin: 34px;
+    border: 5px solid rgb(148, 141, 141);
+}
+
+.get-involved h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.get-involved-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.box {
+    max-width: 50px;
+    
+}
+
+.box h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.box p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer 
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    width: 1200px;
+}
+
+.footer-content{
+    width:200px;
+
+}
+
+footer .socials a {
+    margin: 0 0.5rem;
+    color: white;
+    text-decoration: none;
+    margin-top: auto;
+}
+/* Responsive Design 
+@media (max-width: 768px) {
+    .services, .get-involved-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service, .box {
+        margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/*container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.top-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar ul.social-links {
+    list-style: none;
+}
+
+.top-bar ul.social-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.top-bar ul.social-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .btn-donate {
+    background-color: #f90;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.hero{
+   /* background-image: url(d2.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    color:black;
+    text-align: center;
+    background-attachment: fixed;
+    
+
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.btn-donate {
+    background-color: #f90;
+    color: #fff;
+}
+
+.services {
+    background-color: grey;
+    padding: 50px 0;
+}
+
+.services .service {
+    width: 25%;
+    text-align: center;
+    padding: 20px;
+}
+
+.div img {
+    width: 400px;
+    height: 200px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}*/
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.btn-donate {
+    background-color: #f90;
+    color: #fff;
+}
+
+.join-btn {
+    background-color: orange;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons button {
+    padding: 0.8rem 2rem;
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.donate-btn {
+    background-color: orange;
+    color: white;
+}
+
+.watch-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 1rem;
+    background-color: rgb(230, 220, 220);
+    text-align: center;
+    border-radius: 45px;
+    border:3px solid rgb(148, 138, 138);
+    justify-content: right;
+
+}
+
+.service img {
+    width: 250px;
+    border-radius: 5px;
+    border:3px solid rgb(146, 136, 136);
+    margin:2px;
+    padding:2px;
+
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.service p {
+    font-size: 20px;
+    color: rgb(70, 59, 59);
+}
+
+/* Get Involved Section */
+/*.get-involved {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #fff;
+    margin-top: auto;
+    display: flex;
+    margin: 34px;
+    border: 5px solid rgb(148, 141, 141);
+}
+
+.get-involved h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.get-involved-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+*/
+.box {
+    max-width: 50px;
+    
+}
+
+.box h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.box p {
+    font-size: 1rem;
+    color: #666;
+}
+    </style>
+</head>
+
+<body>
+
+    <!--<h3>"Make a Difference Today - Your One Step Can change Many Lives"</h3>-->
+
+
+    <header>
+        <div class="logo">
+        <img src="d0.jpg" alt="error">
+        </div>
+        <nav class=" navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contactus.html"> Contact us</a></li>
+                <li><a href="donation.html">Donate</a></li>
+                <li><a href="ask question.html">Ask doubts</a></li>
+                <li><a href="volunteer.html">Volunteer </a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <br><br><br>
+
+    <!--<section class="hero">
+        <div class="hero-content">
+            <h1>Help The Poor For Their Better Future</h1>
+            <p>Every day we bring hope to millions of children in the world's hardest places as a sign of God's unconditional love.</p>
+            <div class="hero-buttons">
+                <a href="donation.html" class="btn btn-donate">Donate Now</a>
+              
+            </div>
+        </div>
+    </section>
+
+    Services Section 
+    <section class="services">
+        <div class="container">
+            <div class="service">
+                <img src="d16.jpg" alt="Help a child">
+                <h3>Help The Child</h3>
+                
+                <p>Contribute old clothes, books, and other essentials to help those in need..</p>
+            </div>
+            <div class="service">
+                <img src="d19.jpg"alt="error">
+                <h3>Become a Volunteer</h3>
+                <p>We connect nonprofits, donors, and companies in nearly every country around the world.</p>
+            </div>
+            <div class="service">
+                <img src="d18.jpg"alt="error">
+                <h3>clothes</h3>
+                <p>Provide warmth and comfort to those who need it by donating your old clothes.</p>
+            </div>
+            <div class="service">
+                <img src="d20.jpg"alt="error">
+                <h3>Book</h3>
+                <p>Help educate underprivileged children by donating your used books.</p>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Footer 
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Donate Fund - All rights reserved.</p>
+        </div>
+    </footer>
+--
+    <br> <br>
+    <div class="container swiper">
+        <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+
+                <li class="card-item swiper-slide ">
+                    <a href="#" class="card-link">
+                        <img src="d2.jpg" width="400px" height="200px" bottom="400px" alt="Error"
+                            class="card-image"></img>
+                        <p class="badge">Donate</p>
+                        <h2 class="card-title">
+                            Donate today and be the light of hope for someone's life.
+                        </h2>
+
+                    </a>
+                </li>
+
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="d3.jpg" width="400px" height="200px" bottom="400px" alt="Error"
+                            class="card-image"></img>
+                        <p class="badge">Old Clothes</p>
+                        <h2 class="card-title">
+                            Your old clothes could be a new beginning for someone else.
+                        </h2>
+
+                    </a>
+                </li>
+
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="d4.jpg" width="400px" height="200px" bottom="400px" alt="Error"
+                            class="card-image"></img>
+                        <p class="badge">Old Book's</p>
+                        <h2 class="card-title">
+                            An old book in your hand can be a new world in someone else's.
+                        </h2>
+
+                    </a>
+                </li>
+
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="d10.jpg" width="400px" height="200px" bottom="400px" alt="Error"
+                            class="card-image"></img>
+                        <p class="badge">Gift's</p>
+                        <h2 class="card-title">
+                            A gift for a festival is a symbol of joy for them.
+                        </h2>
+
+                    </a>
+                </li>
+
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="d5.jpg" width="400px" height="200px" bottom="400px" alt="Error"
+                            class="card-image"></img>
+                        <p class="badge">Medical Facilities</p>
+                        <h2 class="card-title">
+                            The backbone of a healthy society and a chance for a better life.
+                        </h2>
+
+                    </a>
+                </li>
+
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="d1.jpg" width="200px" height="200px" bottom="200px" alt="Error"
+                            class="card-image"></img>
+                        <p class="badge">Smile</p>
+                        <h2 class="card-title">
+                            "Helping other with smile shows that kindness is not just in what we do , but in how we do
+                            it".
+                        </h2>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <p1></p1>
+
+        </div>-->
+
+
+        <!--linking swiper js script
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <script src="scripty.js"></script>--->
+
+       
+
+    <!--<br><br><br>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Support Those in Need</h1>
+            <p>We bring hope to millions of people by collecting old clothes, books, and essentials for a better future.</p>
+            <div class="hero-buttons">
+               ---<button class="donate-btn">Click on donate
+                </button>
+                <a href="donation.html" class="btn btn-donate">Donate Now</a>
+            </div>
+        </div>
+    </section>
+ <br><br><br>
+    <section class="services">
+        <div class="service">
+            <img src="d3.jpg" alt="Help a child">
+            <h3>Donate Clothes</h3>
+            <p>Provide warmth and comfort to those who need it by donating your old clothes.</p>
+        </div>
+        
+        <div class="service">
+            <img src="d4.jpg" alt ="Donate books">
+            <h3>Donate Books</h3>
+            <p>Help educate underprivileged children by donating your used books.</p>
+        </div>
+        
+        <div class="service">
+            <img src="d11.jpg" alt="Volunteer">
+            <h3>Become a Volunteer</h3>
+            <p>Make a difference in your community by volunteering your time and effort.</p>
+        </div>
+    </section>
+
+    -Get Involved Section 
+    --<section class="get-involved">
+        <h2>How to get involved </h2>
+        <div class="get-involved-content">
+            <div class="box">
+                <h3>Volunteer</h3>
+                <p>Become a part of our mission by helping us organize events and distribute donations.</p>
+            </div>
+            <div class="box">
+                <h3>Donate Goods</h3>
+                <p>Contribute old clothes, books, and other essentials to help those in need.</p>
+            </div>
+            <div class="box">
+                <h3>Fundraising Events</h3>
+                <p>Join or support our events that raise funds for various causes.</p>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Footer 
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Donate Fund | All rights reserved.</p>
+            <div class="socials">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>-->
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Support Those in Need</h1>
+            <p>We bring hope to millions of people by collecting old clothes, books, and essentials for a better future.</p>
+            <div class="hero-buttons">
+               
+                <a href="donation.html" class="btn btn-donate">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="service">
+            <img src="d3.jpg" alt="Help a child">
+            <h3>Donate Clothes</h3>
+            <p>Provide warmth and comfort to those who need it by donating your old clothes.</p>
+        </div>
+        
+        <div class="service">
+            <img src="d4.jpg" alt ="Donate books">
+            <h3>Donate Books</h3>
+            <p>Help educate underprivileged children by donating your used books.</p>
+        </div>
+        
+        <div class="service">
+            <img src="d11.jpg" alt="Volunteer">
+            <h3>Become a Volunteer</h3>
+            <p>Make a difference in your community by volunteering your time and effort.</p>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

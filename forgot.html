@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Forgot Password</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    
+    width: 200px;
+    padding: 20px;
+}
+
+.form-box {
+    background-color: gray;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-color: 3px solid white;
+    width: 600px;
+    height: 400px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: black;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color:black;
+}
+
+input:focus {
+    outline: none;
+    border-color: black;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color:black;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color:rgb(49, 48, 48);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .form-box {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+
+body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(221, 212, 212);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .card-wrapper {
+            margin: 0 auto;
+        }
+
+        header {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            padding: 20px 100px;
+           /* background: grey;*/
+            /* img lagane baad ye hata dena  fir pure me image lag jaayegi*/
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo {
+            font-size: 15px;
+            color: rgb(221, 212, 212);
+            user-select: none;
+        }
+
+        .logo img{
+            height: 80px;
+            margin: 20px;
+            border-radius: 30px;
+        }
+        .navbar .btnLogin-popup {
+            width: 130px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid #fff;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            color: black;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: -5s;
+        }
+
+        .navbar .btnLogin-popup:hover {
+            background: #fff;
+            color: #162938;
+        }
+
+        .navbar a {
+            position: relative;
+            font-size: 1.1em;
+            color:white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+        }
+
+        /* for underline under the home about contact*/
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background:white;
+            border-radius: 1px;
+            transform-origin: left;
+            transform: scaleX(0);
+            /* hide kar deta kisi chiz ko*/
+            transition: transform .5s;
+            /* for second*/
+        }
+
+        .navbar a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .navbar {
+          /*  background-color: rgb(221, 212, 212);*/
+            border-radius: 8px;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 10px 10px;
+            font-family: Georgia, serif;
+        }
+
+        .navbar li a {
+            padding: 4px 4px;
+            text-decoration: none;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        body {
+            /* background-color: pink;*/
+            font-family: 'Lucida Sans', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(221, 212, 212);
+            background-size: cover;
+            background-image: url(d15.jpg);
+            background-attachment: fixed;
+        }
+
+        navbar ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+
+            margin-top: 40px;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            box-sizing: border-box;
+            color: rgb(221, 212, 212);
+        }
+
+        h3 {
+
+            font-family: Georgia, serif;
+            font-size: 30px;
+            margin-bottom:350px;
+        }
+
+        p {
+
+            font-family: Georgia, serif;
+            font-size:20px;
+            color: black;
+        }
+
+        button {
+
+            font-family: Georgia, serif;
+        }
+
+ /* General Styles */
+.join-btn {
+    background-color: orange;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Footer */
+/*footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    width: 1200px;
+}
+
+.footer-content{
+    width:200px;
+
+}
+
+footer .socials a {
+    margin: 0 0.5rem;
+    color: white;
+    text-decoration: none;
+    margin-top: auto;
+}
+*/
+/* Responsive Design */
+/*@media (max-width: 768px) {
+    .services, .get-involved-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service, .box {
+        margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+*/
+
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <div class="logo">
+        <img src="d0.jpg" alt="error">
+        </div>
+        <nav class=" navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contactus.html"> Contact us</a></li>
+                <li><a href="donation.html">Donate</a></li>
+                <li><a href="ask question.html">Ask doubts</a></li>
+                <li><a href="volunteer.html">Volunteer </a></li>
+
+            </ul>
+        </nav>
+    </header>
+<br> <br><br>
+    <div class="container">
+        <div class="form-box">
+            <h2>Forgot Password</h2><br>
+            <p>Link will be provided in the mail.</p>
+            <form id="forgot-password-form">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <button type="submit" id="submit-btn">Send Reset Link</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
